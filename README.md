@@ -2,7 +2,7 @@
 
 *Heap is a modern take on analytics.* There's no need to ship event tracking code, no need to wait days or weeks for data to accumulate, no need to muddle your codebase, and no need to fumble with rigid reports.
 
-For the first time, meaningful product questions can be answered just as soon as they're asked.
+!For the first time, meaningful product questions can be answered just as soon as they're asked!
 
 ------------
 See `CHANGELOG.md` for what's new.
