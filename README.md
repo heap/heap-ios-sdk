@@ -4,6 +4,8 @@
 
 !For the first time, meaningful product questions can be answered just as soon as they're asked!
 
+♥️
+
 ------------
 See `CHANGELOG.md` for what's new.
 ------------
