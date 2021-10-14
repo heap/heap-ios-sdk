@@ -7,6 +7,61 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 [cl]: http://keepachangelog.com/
 [sv]: http://semver.org/
 
+## [8.0.0] - 2021-10-12
+
+### Breaking changes
+- Adopting the XCFramework will require minor code changes for both manual and Cocoapods installs.
+
+### Added
+- Included Heap.xcframework with support for M1 Macs.
+- Added options to support proxying requests.
+- Fixed failure when calling `-[UISegmentedControl setSelectedSegmentIndex:-1]` shortly after it was touched.
+- Improved handling of malformed event properties.
+- Fixed tracking of Storyboard-created gesture recognizers on pre-iOS 13 devices.
+
+## [7.5.1] - 2021-05-24
+
+### Fixed
+- Fix a race condition where the SDK "bails" on boot if an `appId` isn't set yet.
+
+## [7.5.0] - 2021-05-04
+
+### Added
+- Allow the size of captured view ancestry chains to be configured.
+
+### Fixed
+- Constrain view ancestry capture to 30 elements so CPU usage isn't unbounded.
+
+## [7.4.1] - 2021-01-12
+
+### Fixed
+- Fixed a "duplicate symbols for architecture" error that could appear when building the `Debug` scheme.
+
+## [7.4.0] - 2021-01-08
+
+### Added
+- Allow pairing with the Heap Event Visualizer using a QR code.
+
+### Fixed
+- Fix an issue where two-pass selector processing could sometimes overwrite events that didn't represent touches.
+- Misc. improvements based on suggestions from Xcode's static analyzer.
+
+## [7.3.0] - 2020-09-25
+
+### Added
+- Support for screen views in the event visualizer.
+
+### Fixed
+- Don't allow non-numeric app IDs when the Heap library is being initialized.
+- Overhauled the event visualizer to make it more consistent with autocaptured data.
+- Fixed an issue where interactions with `UISegmentedControl` instances wouldn't show up in the event visualizer.
+
+## [7.2.0] - 2020-08-27
+
+### Added
+- Support for iOS 14 (beta 5).
+- Capture app background/foreground visiblity status for every autocaptured event.
+
 ## [7.1.1] - 2020-07-13
 
 ### Fixed
@@ -16,6 +71,11 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 
 ### Added
 - Allow the disabling of tracking events using `setTrackingEnabled:` or the `disableTracking` property on `HeapOptions`.
+
+## [7.0.2] - 2020-07-13
+
+### Fixed
+- Fixed an issue where certain UTF-16 strings are truncated incorrectly, possibly causing a crash.
 
 ## [7.0.1] - 2020-06-30
 
@@ -294,5 +354,5 @@ them here as we intend to remove them in a future release.
   `removeEventProperty:` respectively. The new methods are aliases, so
   simply replacing calls will work.
 
-[id]: https://docs.heapanalytics.com/docs/using-identify
+[id]: https://developers.heap.io/docs/using-identify
 [texture]: https://github.com/TextureGroup/Texture
