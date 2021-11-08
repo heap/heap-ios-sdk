@@ -30,4 +30,7 @@ CHECKSUM=$(swift package compute-checksum "${ZIP_PATH}")
 
 unzip -o "$ZIP_PATH" CHANGELOG.md README.md -d "../" # Here's where we fail if it's a bad version number.
 
+echo 'Updating Package.swift'
 sed -i '' "s#\"https://cdn.heapanalytics.com/ios/heap-ios-[^\"]*\"#\"${ZIP_URL}\"#; s#\(checksum: \"\)[^\"]*#\1${CHECKSUM}#" ../Package.swift
+
+echo "Done!"
