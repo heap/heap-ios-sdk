@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 - Added `[Heap sessionId]` and `[Heap identity]` for retrieving the values currently sent with events.
 - Added option to disable gesture recognizer events with `disableGestureAutocapture` property on `HeapOptions`.
 
+### Changed
+
+- Heap now performs method swizzling during `[Heap initialize:]` but can be made to perform it earlier via `[Heap instrumentAutocaptureWithOptions:]`.
+
 ### Fixed
 - Improved capture of view controller titles.
 - Fixed infinite recursion crash in SwiftUI previews.
