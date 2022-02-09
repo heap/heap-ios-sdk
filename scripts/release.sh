@@ -13,7 +13,7 @@ exit 1
 fi
 
 HEAP_VERSION=$1
-REQUIRED_BRANCH="master"
+REQUIRED_BRANCH=$(echo "$HEAP_VERSION" | awk '{if ( $0 ~ /-/ ) { print "prerelease" } else { print "master" }}')
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 if [[ "$CURRENT_BRANCH" != "$REQUIRED_BRANCH" ]]
