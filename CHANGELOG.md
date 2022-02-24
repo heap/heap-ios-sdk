@@ -7,6 +7,21 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 [cl]: http://keepachangelog.com/
 [sv]: http://semver.org/
 
+## [8.1.0] - 2022-02-24
+
+### Added
+- Added `[Heap sessionId]` and `[Heap identity]` for retrieving the values currently sent with events.
+- Added option to disable gesture recognizer events with `disableGestureAutocapture` property on `HeapOptions`.
+
+### Changed
+
+- Heap now performs method swizzling during `[Heap initialize:]` but can be made to perform it earlier via `[Heap instrumentAutocaptureWithOptions:]`.
+
+### Fixed
+- Improved capture of view controller titles.
+- Fixed infinite recursion crash in SwiftUI previews.
+- Resolved `(null)` pageview properties.
+
 ## [8.0.0] - 2021-10-12
 
 ### Breaking changes
