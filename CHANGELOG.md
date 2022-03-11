@@ -7,7 +7,27 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 [cl]: http://keepachangelog.com/
 [sv]: http://semver.org/
 
-## [8.1.0] - unreleased
+## [9.0.0] - unreleased
+
+### Added
+
+- Added integration hooks for separate SwiftUI autocapture SDK.
+
+### Fixed
+
+- Fixed graphical glitches in Event Visualizer screenshots.  If this causes performance issues while connected to Event Visualizer, the
+  previous behavior can be turned back on with the `useFastEVScreenshotCapture` property on `HeapOptions`.
+
+### Changed
+
+- Gesture recognizers autocapture has become opt-out by default.  They can be enabled with the `enableGestureAutocapture` property on
+  `HeapOptions`.
+
+### Removed
+
+- Removed deprecated methods from Heap SDK.
+
+## [8.1.0] - 2022-02-24
 
 ### Added
 - Added `[Heap sessionId]` and `[Heap identity]` for retrieving the values currently sent with events.
