@@ -7,6 +7,19 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 [cl]: http://keepachangelog.com/
 [sv]: http://semver.org/
 
+## [8.2.0] - unreleased
+
+### Added
+- Added options to disable various title, ivar, and accessibility label capture with the `isTitleCaptureDisabled`, `isIvarCaptureDisabled`,
+  and `isAccessibilityLabelCaptureDisabled` properties on `HeapOptions`.
+- Added an option to disable view controller autocapture with the `disableViewControllerAutocapture` property on `HeapOptions`.
+- Improved logging of React Native events in the console.
+- Added support for React Native in Event Visualizer.
+
+### Fixed
+- Fixed graphical defects in Event Visualizer screenshots.  The SDK will automatically revert back to fast screenshots if a performance
+  issue is detected, but it can also be manually enabled with the `useFastEVScreenshotCapture` property on `HeapOptions`.
+
 ## [8.1.0] - 2022-02-24
 
 ### Added
