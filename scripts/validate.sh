@@ -15,5 +15,5 @@ unzip resources/ReleaseTester.zip -d "$TMP_DIR"
 cd "$TMP_DIR/ReleaseTester"
 
 sed -i '' "s#PATH_TO_HEAP#${PATH_TO_HEAP}#" Package.swift
-xcodebuild clean build -scheme ReleaseTester -destination 'platform=iOS Simulator,OS=latest,name=iPhone 12' |xcpretty
-
+xcodebuild clean build -scheme ReleaseTester -destination "generic/platform=iOS Simulator" |xcpretty
+xcodebuild clean build -scheme ReleaseTester -destination "generic/platform=iOS" |xcpretty
