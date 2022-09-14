@@ -7,6 +7,13 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 [cl]: http://keepachangelog.com/
 [sv]: http://semver.org/
 
+## [9.0.1] - 2022-09-14
+
+### Fixed
+
+- Modified background pageview logic to filter snapshot-only view controllers
+  without rejected selectors.
+
 ## [9.0.0] - 2022-07-20
 
 ### Added
