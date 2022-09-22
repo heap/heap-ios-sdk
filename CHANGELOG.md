@@ -7,27 +7,60 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 [cl]: http://keepachangelog.com/
 [sv]: http://semver.org/
 
-## [9.0.0] - unreleased
+## [9.1.0] - unreleased
+
+### Changed
+- Moved data storage out of `NSUserDefaults`.
+
+## [9.0.1] - 2022-09-14
+
+### Fixed
+
+- Modified background pageview logic to filter snapshot-only view controllers
+  without rejected selectors.
+
+## [9.0.0] - 2022-07-20
 
 ### Added
 
-- Added integration hooks for separate SwiftUI autocapture SDK.
-- Added new properties `UIView.redactText` and
-  `UIView.redactAccessibilityLabel` for redacting text properties from touch
-  events.
+- Added new properties `UIView.heapRedactText` and
+  `UIView.heapRedactAccessibilityLabel` for redacting text properties from
+  touch events.
+- Added new property `UIView.heapIgnoreInnerHierarchy` for omitting inner view
+  hierarchies from touch events. The default behavior for a view can be set
+  by overriding the static `heapIgnoreInnerHierarchyDefault` property.
 
 ### Fixed
 
 - Improved attribution of pageviews in multi-window iPad apps.
+- Fixed performance issues when Heap uploads fail for a prolonged period of
+  time.  This includes a recovery mechanism where Heap will reset its internal
+  data stores when initialized in an impacted state.
 
 ### Changed
 
 - Gesture recognizers autocapture has become opt-out by default.  They can be
   enabled with the `enableGestureAutocapture` property on `HeapOptions`.
+- `Heap.resetIdentity()` has been updated to be consistent with web autocapture.
+  The session will no longer reset for anonymous users and it doesn't clear
+  event properties.
+- `Heap.identify(...)` has been updated to be consistent with web autocapture.
+  It will now start a new session when transitioning between two non-anonymous
+  users.
 
-### Removed
+### Breaking changes
 
-- Removed deprecated methods from Heap SDK.
+- Deprecated methods have been removed from the Heap SDK.
+- Dropped support for iOS versions below 12.0.
+- Dropped support for Visual Labeling (aka Event Visualizer) prior to iOS 13.0.
+  Heap will function as expected, but pairing gestures, the QR code, and
+  `[Heap startEVPairing]` will have no effect on iOS 12 devices.
+  
+## [8.2.1] - 2022-07-26
+
+### Fixed
+
+- Fixed issue causing pageview ids not to rotate.
 
 ## [8.2.0] - 2022-04-05
 
