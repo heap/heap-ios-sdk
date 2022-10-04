@@ -10,7 +10,13 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 ## [9.1.0] - unreleased
 
 ### Changed
+
 - Moved data storage out of `NSUserDefaults`.
+
+### Fixed
+
+- Fixed issue with double-encoded session properties.
+- Fixed data purge logic when queues are in an invalid state.
 
 ## [9.0.1] - 2022-09-14
 
