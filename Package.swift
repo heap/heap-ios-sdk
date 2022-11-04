@@ -14,8 +14,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "Heap",
-      url: "https://cdn.heapanalytics.com/ios/heap-ios-8.2.2.zip",
-      checksum: "0d7d67099629868acdc65ac5044115acb51baa75943b55ad611ed223d0699ab9"
+      url: "https://cdn.heapanalytics.com/ios/heap-ios-9.0.2.zip",
+      checksum: "b7432320b6865e4f6a8e6a0f6f625d08f4b142237dd7c0f8bde8f41a75cf174c"
     ),
   ]
 )
