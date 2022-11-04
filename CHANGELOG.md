@@ -7,10 +7,16 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 [cl]: http://keepachangelog.com/
 [sv]: http://semver.org/
 
-## [9.0.2] - 2022-11-03
+## [9.1.0] - 2022-11-03
+
+### Changed
+
+- Moved data storage out of `NSUserDefaults`.
 
 ### Fixed
+
 - Fixed issue with double-encoded session properties.
+- Fixed data purge logic when queues are in an invalid state.
 
 ## [9.0.1] - 2022-09-14
 
@@ -55,6 +61,12 @@ The format is based on [Keep a Changelog][cl] and this project adheres to
 - Dropped support for Visual Labeling (aka Event Visualizer) prior to iOS 13.0.
   Heap will function as expected, but pairing gestures, the QR code, and
   `[Heap startEVPairing]` will have no effect on iOS 12 devices.
+  
+## [8.2.1] - 2022-07-26
+
+### Fixed
+
+- Fixed issue causing pageview ids not to rotate.
 
 ## [8.2.0] - 2022-04-05
 
